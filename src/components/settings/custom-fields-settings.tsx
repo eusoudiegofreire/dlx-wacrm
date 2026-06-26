@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { Shield, SlidersHorizontal } from 'lucide-react';
 
@@ -22,15 +22,15 @@ export function CustomFieldsSettings() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className=”flex items-center gap-2 text-foreground”>
-          <SlidersHorizontal className=”size-4 text-primary” />
+        <CardTitle className="flex items-center gap-2 text-foreground">
+          <SlidersHorizontal className="size-4 text-primary" />
           Campos personalizados
-          <SettingsChip variant=”admin” className=”font-medium”>
+          <SettingsChip variant="admin" className="font-medium">
             <Shield />
             Admin
           </SettingsChip>
         </CardTitle>
-        <CardDescription className=”text-muted-foreground”>
+        <CardDescription className="text-muted-foreground">
           Campos adicionais de contato (ex: CEP, origem do lead). Aparecem em cada contato e na ação de automação &quot;Atualizar Campo de Contato&quot;.
         </CardDescription>
       </CardHeader>
