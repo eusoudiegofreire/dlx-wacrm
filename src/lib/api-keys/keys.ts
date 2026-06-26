@@ -22,7 +22,7 @@
 import { createHash, randomBytes, timingSafeEqual } from 'node:crypto';
 
 /** Secret prefix on every key. Part of the plaintext, not a secret. */
-export const API_KEY_PREFIX = 'wacrm_live_';
+export const API_KEY_PREFIX = 'dlxcrm_live_';
 
 /**
  * Length of the non-secret display prefix stored in `key_prefix` and

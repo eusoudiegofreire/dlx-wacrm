@@ -25,7 +25,7 @@ export type ThemeId = (typeof THEME_IDS)[number];
 
 export const DEFAULT_THEME: ThemeId = "violet";
 
-export const STORAGE_KEY = "wacrm.theme";
+export const STORAGE_KEY = "dlxcrm.theme";
 
 /**
  * MODE — the light/dark dimension, orthogonal to the accent theme.
@@ -45,7 +45,7 @@ export type Mode = (typeof MODES)[number];
 
 export const DEFAULT_MODE: Mode = "dark";
 
-export const MODE_STORAGE_KEY = "wacrm.mode";
+export const MODE_STORAGE_KEY = "dlxcrm.mode";
 
 export function isMode(value: unknown): value is Mode {
   return (

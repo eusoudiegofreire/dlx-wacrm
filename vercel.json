@@ -1,0 +1,8 @@
+{
+  "regions": ["gru1"],
+  "functions": {
+    "src/app/api/whatsapp/webhook/route.ts": {
+      "maxDuration": 30
+    }
+  }
+}

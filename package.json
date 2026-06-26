@@ -1,5 +1,5 @@
 {
-  "name": "wacrm",
+  "name": "dlx-crm",
   "version": "0.2.2",
   "private": true,
   "description": "Self-hostable CRM template for WhatsApp built on Next.js and Supabase — shared inbox, contacts, sales pipelines, broadcasts, and no-code automations.",
