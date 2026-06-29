@@ -2,6 +2,18 @@ import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
 export async function proxy(request: NextRequest) {
+  // Routes authenticated by API key carry an Authorization header and
+  // never have a session cookie. Skip the getUser() round-trip entirely
+  // so the supabase client is never constructed for these paths — avoids
+  // any interference with the route handler's own auth logic.
+  const { pathname } = request.nextUrl
+  if (
+    pathname.startsWith('/api/v1/') ||
+    pathname.startsWith('/api/hermes/')
+  ) {
+    return NextResponse.next({ request })
+  }
+
   let supabaseResponse = NextResponse.next({ request })
 
   const supabase = createServerClient(
