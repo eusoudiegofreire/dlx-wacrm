@@ -128,6 +128,12 @@ export async function POST(request: Request) {
         .eq('id', contact.id)
     }
 
+    // TypeScript can't narrow through the find-or-create branches above
+    // (newContact from .single() is typed T | null even on success).
+    if (!contact) {
+      return NextResponse.json({ error: 'Failed to resolve contact' }, { status: 500 })
+    }
+
     // ── Conversation ─────────────────────────────────────────────────────
     const { data: existingConv, error: convFindErr } = await supabase
       .from('conversations')
