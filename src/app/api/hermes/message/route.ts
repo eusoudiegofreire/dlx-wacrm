@@ -37,6 +37,15 @@ function resolveContentType(mediaType: MediaKind | null | undefined): string {
 
 export async function POST(request: Request) {
   try {
+    // --- DEBUG TEMPORÁRIO ---
+    const authHeader = request.headers.get('authorization')
+    const rawKey = authHeader?.replace('Bearer ', '') ?? null
+    console.log('AUTH HEADER:', authHeader)
+    console.log('API KEY RAW:', rawKey)
+    console.log('KEY PREFIX MATCH:', rawKey?.startsWith('dlxcrm_live_'))
+    console.log('KEY LENGTH:', rawKey?.length)
+    // --- FIM DEBUG ---
+
     const ctx = await requireApiKey(request)
     const { supabase, accountId } = ctx
 
