@@ -40,10 +40,12 @@ export async function POST(request: Request) {
     // --- DEBUG TEMPORÁRIO ---
     const authHeader = request.headers.get('authorization')
     const rawKey = authHeader?.replace('Bearer ', '') ?? null
-    console.log('AUTH HEADER:', authHeader)
-    console.log('API KEY RAW:', rawKey)
-    console.log('KEY PREFIX MATCH:', rawKey?.startsWith('dlxcrm_live_'))
-    console.log('KEY LENGTH:', rawKey?.length)
+    console.log('[hermes] AUTH HEADER:', authHeader)
+    console.log('[hermes] API KEY RAW:', rawKey)
+    console.log('[hermes] KEY PREFIX MATCH:', rawKey?.startsWith('dlxcrm_live_'))
+    console.log('[hermes] KEY LENGTH:', rawKey?.length)
+    console.log('[hermes] SUPABASE_URL:', process.env.NEXT_PUBLIC_SUPABASE_URL ? 'set' : 'MISSING')
+    console.log('[hermes] SERVICE_ROLE_KEY:', process.env.SUPABASE_SERVICE_ROLE_KEY ? 'set' : 'MISSING')
     // --- FIM DEBUG ---
 
     const ctx = await requireApiKey(request)
